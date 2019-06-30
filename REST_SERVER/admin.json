@@ -1,0 +1,11 @@
+{
+    "Admin":[
+        {
+            "name" : "Naseem Ahmad",
+            "Age" : "24",
+            "Email": "naseembijnor@gmail.com",
+            "password":"123"
+        }
+    ]
+    
+}

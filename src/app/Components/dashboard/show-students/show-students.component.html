@@ -1,0 +1,27 @@
+<table class="table table-hover table-bordered show-data-table">
+  <thead>
+    <tr>
+      <th>Student Id</th>
+      <th>Email Id</th>
+      <th>Password</th>
+      <th>Gender</th>
+      <th>Phone No.</th>
+      <th>Event</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let val of showStudentData; let i = index;'>
+      <td>{{ val.id }}</td>
+      <td>{{ val.email }}</td>
+      <td>{{ val.password }}</td>
+      <td>{{ val.gender }}</td>
+      <td>{{ val.phone }}</td>
+      <td>
+        <div class="edit-delete">
+          <i class="fa fa-pencil" (click)='editStudentData()'></i>
+          <i class="fa fa-trash-o" (click)='deleteStudentData(val)'></i>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

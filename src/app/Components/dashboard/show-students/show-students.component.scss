@@ -1,0 +1,16 @@
+.show-data-table {
+    width: 80%;
+    margin: 40px auto;
+    box-shadow: 0 3px 12px 1px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    .edit-delete i:first-child {
+        color: #46e662;
+        padding: 0 15px 0 0;
+    }
+    .edit-delete i:last-child {
+        color: #e62121;
+    }
+    .edit-delete i{
+        cursor: pointer;
+    }
+}

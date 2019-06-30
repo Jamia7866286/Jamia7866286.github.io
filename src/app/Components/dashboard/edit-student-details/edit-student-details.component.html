@@ -1,0 +1,89 @@
+<div class="content-agileits">
+  <div class="left">
+    <form [formGroup]="updateForm" (submit)="onSave()">
+      <div class="form-group has-error has-danger">
+        <label for="inputEmail" class="control-label">Email:</label>
+        <input
+          type="email"
+          class="form-control"
+          id="inputEmail"
+          formControlName="emailUpdate"
+          placeholder="Email"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="Phone" class="control-label">Phone:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="Phone"
+          placeholder="Phone"
+          formControlName="phoneUpdate"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="inputPassword" class="control-label">Password:</label>
+        <div class="form-inline row">
+          <div class="form-group col-sm-6 agileits-w3layouts">
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Password"
+              formControlName="passwordUpdate"
+              required
+            />
+          </div>
+          <div class="form-group col-sm-6  agileits-w3layouts">
+            <input
+              type="password"
+              class="form-control"
+              id="inputPasswordConfirm"
+              placeholder="Confirm Password"
+              formControlName="cPasswordUpdate"
+              pattern="{{ updateForm.value.passwordUpdate }}"
+              required
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group w3ls-opt">
+        <label for="Phone" class="control-label">Gender</label>
+
+        <label class="w3layouts">
+          <input
+            type="radio"
+            name="gender"
+            id="hire"
+            value="male"
+            checked
+            formControlName="genderUpdate"
+            required
+          />Male
+        </label>
+        <label class="w3layouts label2">
+          <input
+            type="radio"
+            name="gender"
+            id="work"
+            value="female"
+            formControlName="genderUpdate"
+            required
+          />Female
+        </label>
+      </div>
+      <div class="form-group">
+        <button
+          type="submit"
+          [disabled]="!updateForm.valid"
+          class="btn btn-lg disabled"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
