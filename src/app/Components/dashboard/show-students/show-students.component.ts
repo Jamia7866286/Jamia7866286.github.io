@@ -16,7 +16,14 @@ export class ShowStudentsComponent implements OnInit {
     this._student.deleteStudent(student).subscribe(
       (data) => {
         console.log(data);
-        document.location.reload();
+        this._student.getStudents().subscribe(
+          (neData) => {
+            this.showStudentData = neData;
+          },
+          (err) => {
+            console.log(err);
+          }
+        );
       },
       (err) => {
         console.log(err);

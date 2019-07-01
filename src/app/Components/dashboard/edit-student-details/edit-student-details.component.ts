@@ -9,9 +9,9 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 export class EditStudentDetailsComponent implements OnInit {
 
   constructor() { }
-  updateform: FormGroup;
+  updateForm: FormGroup;
   ngOnInit() {
-    this.updateform = new FormGroup({
+    this.updateForm = new FormGroup({
       emailUpdate: new FormControl ('', Validators.required),
       phoneUpdate : new FormControl ('', Validators.required),
       passwordUpdate: new FormControl ('', Validators.required),
@@ -21,8 +21,7 @@ export class EditStudentDetailsComponent implements OnInit {
   }
 
   onSave(){
-    console.log(this.updateform.value);
-    
+    console.log(this.updateForm.value);
   }
 
 }
