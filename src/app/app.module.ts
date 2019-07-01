@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './Components/login/login.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { ActiveGuard } from './Services/active.guard';
-import { StudentdetailsService } from './Services/studentData/studentdetails.service';
+import { StudentdetailsService } from '/Services/studentData/studentdetails.service';
 import { AddStudentComponent } from './Components/dashboard/add-student/add-student.component';
 import { ShowStudentsComponent } from './Components/dashboard/show-students/show-students.component';
 import { HomeComponent } from './Components/dashboard/home/home.component';
