@@ -9,24 +9,19 @@ export class StudentdetailsService {
 
   constructor(private http:HttpClient,private router: Router ) { }
 
- admin_url:any = "http://localhost:3000/Admin";
-student_url:string = "http://localhost:3000/students";
+ admin_url:any = 'http://localhost:3000/Admin';
+student_url:string = 'http://localhost:3000/students';
 
   getData(){
     return this.http.get(this.admin_url);
   }
   submit_studentData(formvalue){
-   let {fname,email,password,gender,phone} = formvalue; 
+   let { fname, email, password ,gender, phone } = formvalue;
    let data = {id:Date.now(),email,password,fname,gender,phone};
-   return this.http.post(this.student_url, data
-    
-    );
+   return this.http.post(this.student_url, data);
   }
   getStudents(){
-     return this.http.get(this.student_url)
-     .subscribe((res)=>{
-       console.log(res);
-     })
+     return this.http.get(this.student_url);
   }
   authenticate(): boolean{
     let user = sessionStorage.getItem("user");
@@ -39,5 +34,9 @@ student_url:string = "http://localhost:3000/students";
   logout(){
     sessionStorage.removeItem("user");
     this.router.navigate(['/']);
+  }
+
+  deleteStudent(student){
+    return this.http.delete(this.student_url + '/' + student.id);
   }
 }

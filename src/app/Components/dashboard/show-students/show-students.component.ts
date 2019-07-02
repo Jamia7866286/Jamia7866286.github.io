@@ -17,8 +17,8 @@ export class ShowStudentsComponent implements OnInit {
       (data) => {
         console.log(data);
         this._student.getStudents().subscribe(
-          (neData) => {
-            this.showStudentData = neData;
+          (newData) => {
+            this.showStudentData = newData;
           },
           (err) => {
             console.log(err);

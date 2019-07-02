@@ -13,22 +13,25 @@ export class AddStudentComponent implements OnInit {
   studentForm: FormGroup;
   ngOnInit() {
     this.studentForm = new FormGroup({
-      fname: new FormControl('',Validators.required),
-      email: new FormControl('',Validators.required),
-      phone: new FormControl('',Validators.required),
-      password: new FormControl('',Validators.required),
-      gender: new FormControl('',Validators.required),
-      confirmpassword: new FormControl('',Validators.required)
+      email: new FormControl('', Validators.required),
+      phone: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
+      confirmpassword: new FormControl('', Validators.required),
+      gender: new FormControl('', Validators.required)
     })
 
     this._student.getStudents();
   }
 
   onSubmit() {
-    this._student.submit_studentData(this.studentForm.value)
-    .subscribe((res)=>{
+    this._student.submit_studentData(this.studentForm.value).subscribe(
+      (res)=>{
       console.log(res);
-    })
+    },
+    (err) => {
+      console.log(err);
+    }
+  );
     console.log(this.studentForm.value);
     this.studentForm.reset();
   }
